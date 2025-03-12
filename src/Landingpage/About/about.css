@@ -1,0 +1,297 @@
+* {
+    text-decoration: none;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#about {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+}
+.about-section-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+/* content styling */
+.about-section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+/* Text Content */
+.about-section-text {
+    flex: 1.2;
+}
+.about-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+}
+.about-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: #3498db;
+    border-radius: 2px;
+}
+.about-subtitle {
+    font-size: 1.8rem;
+    color: #3498db;
+    margin: 1.5rem 0 1rem;
+    font-weight: 600;
+}
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+/* Image Content */
+.about-section-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+}
+.about-image:hover {
+    transform: scale(1.02);
+}
+/* Additional Box */
+.about-additional-box {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-additional-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+}
+.additional-box-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+.additional-box-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 3px;
+    background-color: #3498db;
+    border-radius: 2px;
+}
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+.feature-list li {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+}
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-weight: bold;
+}
+.feature-highlight {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 1.5rem;
+    padding: 15px;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+}
+/* Desktop - Large screens (1200px and up) */
+@media (min-width: 1200px) {
+    .about-section-container {
+        padding: 60px;
+    }
+    .about-title {
+        font-size: 3rem;
+    }
+    .about-subtitle {
+        font-size: 2rem;
+    }
+    .about-description {
+        font-size: 1.2rem;
+    }
+    .additional-box-title {
+        font-size: 2rem;
+    }
+    .feature-list li {
+        font-size: 1.2rem;
+    }
+    .feature-highlight {
+        font-size: 1.2rem;
+    }
+}
+/* Laptop - Medium screens (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about-section-container {
+        padding: 40px;
+    }
+    .about-title {
+        font-size: 2.4rem;
+    }
+    .about-subtitle {
+        font-size: 1.7rem;
+    }
+}
+/* Tablet - (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .about-section-container {
+        padding: 30px;
+        width: 95%;
+    }
+    .about-section-content {
+        gap: 2rem;
+    }
+    .about-title {
+        font-size: 2.2rem;
+    }
+    .about-subtitle {
+        font-size: la.5rem;
+    }
+    .about-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .additional-box-title {
+        font-size: 1.6rem;
+    }
+    .feature-list li {
+        font-size: 1rem;
+    }
+    .feature-highlight {
+        font-size: 1rem;
+        padding: 12px;
+    }
+    .about-additional-box {
+        padding: a25px;
+    }
+}
+/* Mobile - (767px and below) */
+@media (max-width: 767px) {
+    #about {
+        min-height: auto;
+        padding: 2.5rem 0;
+    }
+    .about-section-container {
+        padding: 25px;
+        width: 92%;
+        margin: 0 auto;
+    }
+    .about-section-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about-section-text {
+        order: 2;
+    }
+    .about-section-image {
+        order: 1;
+    }
+    .about-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .about-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about-subtitle {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    .about-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+    .additional-box-title {
+        font-size: 1.5rem;
+        text-align: center;
+        display: block;
+    }
+    .additional-box-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+    }
+    .feature-list li {
+        font-size: 0.95rem;
+        padding-left: 1.5rem;
+    }
+    .feature-highlight {
+        font-size: 0.95rem;
+        text-align: center;
+        padding: 12px;
+    }
+    .about-additional-box {
+        padding: 20px;
+    }
+}
+/* For extremely small screens */
+@media (max-width: 350px) {
+    .about-section-container {
+        padding: 20px 15px;
+        width: 95%;
+    }
+    .about-title {
+        font-size: 1.6rem;
+    }
+    .about-subtitle {
+        font-size: 1.3rem;
+    }
+    .additional-box-title {
+        font-size: 1.4rem;
+    }
+    .feature-list li {
+        font-size: 0.9rem;
+    }
+    .feature-highlight {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

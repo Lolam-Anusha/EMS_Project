@@ -1,36 +1,10 @@
-import React from "react"
-import image from "../../assets/erp.png"
-import "./about.css"
-import Card from "./Card"
+import React from "react";
+import "./about.css";
+
 const About = () => {
     return (
         <>
-            <section className="about-section">
-                <div className="intro-section-container">
-                    <div className="intro-section-content">
-                        {/* Left side content */}
-                        <div className="intro-section-text">
-                            <h1 className="intro-title">TeamTrack</h1>
-                            <p className="intro-description">
-                                TeamTrack is a powerful, intuitive, and efficient Employee Management System designed to streamline the way
-                                organizations handle their workforce. Built with modern technologies like React.js, TeamTrack aims to provide
-                                businesses with a user-friendly interface and robust functionality to improve productivity and foster team collaboration.
-                            </p>
-                            <button className="get-started-button">Get Started</button>
-                        </div>
-
-                        {/* Right side image */}
-                        <div className="intro-section-image">
-                            <img
-                                src={image}
-                                alt="TeamTrack Illustration"
-                                className="intro-image"
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Features Section */}
+            <section id="about">
                 <div className="about-section-container">
                     <div className="about-section-content">
                         <div className="about-section-text">
@@ -47,7 +21,7 @@ const About = () => {
                         <div className="about-section-image">
                             <img
                                 src="https://leapmax.ai/wp-content/uploads/2024/10/employee-management-system.webp"
-                                alt="About Employee Management" width="100%"
+                                alt="About Employee Management"
                                 className="about-image"
                             />
                         </div>
@@ -66,9 +40,9 @@ const About = () => {
                         </p>
                     </div>
                 </div>
-                <Card />
             </section>
         </>
-    )
-}
-export default About 
+    );
+};
+
+export default About

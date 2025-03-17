@@ -8,14 +8,14 @@ const About = () => {
                 <div className="about-section-container">
                     <div className="about-section-content">
                         <div className="about-section-text">
-                            <h1 className="about-title">About Employee Management System</h1>
+                            <h1 className="about-title">About Team Track</h1>
                             <p className="about-description">
-                                Managing employees effectively is the cornerstone of every successful organization. The Employee Management System (EMS) offers a centralized platform to streamline administrative tasks, improve communication, and optimize employee performance. This modern solution addresses challenges like managing schedules, tracking progress, and analyzing team performance, making it an essential tool for businesses of all sizes.
+                                Managing employees effectively is the cornerstone of every successful organization. The Employee Management System (EMS) Team Track offers a centralized platform to streamline administrative tasks, improve communication, and optimize employee performance. This modern solution addresses challenges like managing schedules, tracking progress, and analyzing team performance, making it an essential tool for businesses of all sizes.
                             </p>
-                            <h2 className="about-subtitle">Why Choose Our EMS?</h2>
+                            <h2 className="about-subtitle">Why to Choose Team Track?</h2>
                             <p className="about-description">
-                                Our Employee Management System is designed to empower organizations by simplifying complex workflows. With features such as role-based access, real-time analytics, and performance tracking, EMS enables managers to focus on driving results.
-                                Whether you are overseeing a small team or managing a large enterprise, our EMS ensures efficiency, accuracy, and transparency at every level.
+                                Team Track is designed to empower organizations by simplifying complex workflows. With features such as role-based access, real-time analytics, and performance tracking, Team Track enables managers to focus on driving results.
+                                Whether you are overseeing a small team or managing a large enterprise, Team Track ensures efficiency, accuracy, and transparency at every level.
                             </p>
                         </div>
                         <div className="about-section-image">
@@ -27,7 +27,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="about-additional-box">
-                        <h2 className="additional-box-title">Key Features of Our EMS</h2>
+                        <h2 className="additional-box-title">Key Features of Team Track</h2>
                         <ul className="feature-list">
                             <li>Role-based dashboards for Admins, Managers, and Employees.</li>
                             <li>Comprehensive performance and project tracking tools.</li>

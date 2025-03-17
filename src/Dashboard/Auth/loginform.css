@@ -3,12 +3,9 @@
 .login-container {
     display: flex;
     width: 80%;
-    /* Reduced from 100% to 80% */
     max-width: 1200px;
-    height: 600px;
-    /* Fixed height instead of 100vh */
+    height: 650px;
     margin: 50px auto;
-    /* Center the container */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -17,7 +14,6 @@
 .login-logo-section {
     flex: 1;
     background-color: #f0f8ff;
-    /* Light blue background */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +46,7 @@
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-y: auto;
 }
 
@@ -61,13 +57,15 @@
     text-align: center;
 }
 
+/* This is the key fix */
 .form-group {
-    margin-bottom: 1.2rem;
+    margin-bottom: 25px;
 }
 
+/* Important: Add proper spacing between labels and inputs */
 .form-group label {
     display: block;
-    margin-bottom: 0.4rem;
+    margin-bottom: 15px;
     font-weight: 500;
     color: #555;
 }
@@ -75,17 +73,25 @@
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 0.75rem;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
     transition: border-color 0.3s;
+    background-color: #f9f9f9;
+    margin-top: 5px; 
 }
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: #0056b3;
     outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #aaa;
 }
 
 .submit-button {
@@ -93,12 +99,13 @@
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 0.75rem;
+    padding: 0.8rem;
     font-size: 1rem;
     cursor: pointer;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 25px;
     transition: background-color 0.3s;
+    font-weight: 600;
 }
 
 .submit-button:hover {
@@ -110,12 +117,13 @@
     color: #0056b3;
     border: 1px solid #0056b3;
     border-radius: 4px;
-    padding: 0.75rem;
+    padding: 0.8rem;
     font-size: 1rem;
     cursor: pointer;
     width: 100%;
-    margin-top: 0.8rem;
+    margin-top: 15px;
     transition: background-color 0.3s;
+    font-weight: 500;
 }
 
 .guest-button:hover {
@@ -124,7 +132,7 @@
 
 .toggle-form {
     text-align: center;
-    margin-top: 1.2rem;
+    margin-top: 20px;
     color: #555;
 }
 

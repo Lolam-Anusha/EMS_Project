@@ -1,26 +1,50 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { UserCircle, Home, Users, ClipboardList, Settings, LogOut, ChevronDown, Menu } from "lucide-react";
-import logo from "../assets/TeamTrack_Logo.png"; // Placeholder for your logo
+import logo from "../assets/TeamTrack_Logo.png";
 import "./dashboard.css"
 
 const Dashboard = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const [userData, setUserData] = useState({
+        name: "User",
+        photoUrl: null,
+        role: "admin"
+    });
 
     // Extract the current view from the URL path
     const getViewFromPath = () => {
         const path = location.pathname.split('/');
         if (path.length > 2) {
-            return path[2]; // Get the role from URL (admin, manager, employee)
+            return path[2];
         }
-        return "admin"; // Default to admin if no specific role is in URL
+        return "admin";
     };
 
     const [activeTab, setActiveTab] = useState("dashboard");
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
     const [currentView, setCurrentView] = useState(getViewFromPath());
+
+    // Load user data from localStorage on component mount
+    useEffect(() => {
+        const currentUser = localStorage.getItem("currentUser");
+        // console.log("Raw currentUser from localStorage:", currentUser);
+        if (currentUser) {
+            const parsedUser = JSON.parse(currentUser);
+            setUserData({
+                name: parsedUser.name || "User",
+                photoUrl: parsedUser.photoUrl || null,
+                role: parsedUser.role || "admin"
+            });
+            
+            // If role exists in user data and not in URL, update the view
+            if (parsedUser.role && !location.pathname.includes(parsedUser.role)) {
+                setCurrentView(parsedUser.role);
+            }
+        }
+    }, [location.pathname]);
 
     // Update the current view when URL changes
     useEffect(() => {
@@ -44,6 +68,12 @@ const Dashboard = () => {
         navigate(`/dashboard/${role}`);
     };
 
+    const handleLogout = () => {
+        // Clear user session data
+        localStorage.removeItem("currentUser");
+        navigate("/");
+    };
+
     return (
         <div className="dashboard-container">
             {/* Top Bar */}
@@ -60,8 +90,21 @@ const Dashboard = () => {
                 <div className="topbar-right">
                     <div className="profile-section">
                         <div className="profile-dropdown" onClick={toggleProfileDropdown}>
-                            <UserCircle size={32} />
-                            <span className="profile-name">John Doe</span>
+                            {userData.photoUrl ? (
+                                <img 
+                                src={userData.photoUrl} 
+                                alt="Profile" 
+                                className="profile-photo"
+                                onError={(e) => {
+                                    console.error("Error loading image:", e);
+                                    e.target.onerror = null;
+                                    e.target.src = "";
+                                }}
+                            />
+                            ) : (
+                                <UserCircle size={32} />
+                            )}
+                            <span className="profile-name">{userData.name}</span>
                             <ChevronDown size={16} />
 
                             {profileDropdownOpen && (
@@ -76,7 +119,7 @@ const Dashboard = () => {
                                             <span>Settings</span>
                                         </li>
                                         <li className="dropdown-divider"></li>
-                                        <li onClick={() => navigate("/")}>
+                                        <li onClick={handleLogout}>
                                             <LogOut size={16} />
                                             <span>Logout</span>
                                         </li>
@@ -137,7 +180,7 @@ const Dashboard = () => {
                                 <span>Settings</span>
                             </li>
 
-                            <li className="logout-item" onClick={() => navigate("/")}>
+                            <li className="logout-item" onClick={handleLogout}>
                                 <LogOut size={20} />
                                 <span>Logout</span>
                             </li>
@@ -149,6 +192,7 @@ const Dashboard = () => {
                 <div className="main-content">
                     <div className="content-header">
                         <h2>{currentView.charAt(0).toUpperCase() + currentView.slice(1)} Dashboard</h2>
+                        <div className="user-welcome">Welcome, {userData.name}!</div>
                     </div>
 
                     <div className="content-body">
@@ -268,6 +312,10 @@ const Dashboard = () => {
                                     <h3>My Information</h3>
                                     <div className="employee-info">
                                         <div className="info-item">
+                                            <span className="info-label">Name:</span>
+                                            <span className="info-value">{userData.name}</span>
+                                        </div>
+                                        <div className="info-item">
                                             <span className="info-label">Department:</span>
                                             <span className="info-value">Engineering</span>
                                         </div>
@@ -284,6 +332,18 @@ const Dashboard = () => {
                                             <span className="info-value">14 days</span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {currentView === "guest" && (
+                            <div className="guest-view">
+                                <div className="dashboard-card">
+                                    <h3>Welcome to TeamTrack</h3>
+                                    <p className="guest-message">
+                                        You are currently browsing as a guest user. Some features may be limited.
+                                        To access all features, please <span className="highlight-text" onClick={() => navigate("/")}>login or create an account</span>.
+                                    </p>
                                 </div>
                             </div>
                         )}

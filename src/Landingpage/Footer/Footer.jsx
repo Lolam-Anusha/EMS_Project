@@ -73,20 +73,8 @@ const Footer = () => {
             </p>
             <form onSubmit={handleSubscribe} className="subscribe-form">
               <div className="form-group">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email address"
-                  className="email-input"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="subscribe-button"
-                >
-                  Subscribe
-                </button>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" className="email-input" required/>
+                <button type="submit" className="subscribe-button">Subscribe</button>
               </div>
               {subscribed && (
                 <p className="success-message">
@@ -100,20 +88,8 @@ const Footer = () => {
           <div className="footer-column">
             <h3 className="footer-heading">Send Feedback</h3>
             <form onSubmit={handleFeedback} className="feedback-form">
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Share your thoughts or suggestions..."
-                className="feedback-textarea"
-                rows="3"
-                required
-              ></textarea>
-              <button
-                type="submit"
-                className="feedback-button"
-              >
-                Submit Feedback
-              </button>
+              <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Share your thoughts or suggestions..." className="feedback-textarea" rows="3" required></textarea>
+              <button type="submit" className="feedback-button">Submit Feedback</button>
               {feedbackSubmitted && (
                 <p className="success-message">
                   Thank you for your feedback!

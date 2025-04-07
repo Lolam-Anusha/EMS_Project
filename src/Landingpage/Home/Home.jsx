@@ -7,7 +7,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     const handleGetStarted = () => {
-        navigate("/login"); // Navigate to login page 
+        navigate("/login");
     };
 
     return (

@@ -27,7 +27,7 @@ const LoginForm = () => {
     }
   }, []);
 
-  // Switch between login and signup modes
+  // switch between login and signup model
   const toggleForm = () => {
     setIsLogin(!isLogin);
     // Clear form when switching modes
@@ -232,9 +232,10 @@ const LoginForm = () => {
             {isLogin ? "Sign up" : "Login"}
           </span>
         </p>
+
       </div>
     </div>
   );
-};
+}
 
 export default LoginForm

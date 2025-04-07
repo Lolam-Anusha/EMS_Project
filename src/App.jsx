@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Home from "./Landingpage/Home/Home";
 import LandingPage from './Landingpage/LandingPage'
 import Dashboard from './Dashboard/Dashboard'
-import LoginForm  from "./Dashboard/Auth/LoginForm" // Import the login form component
+import LoginForm  from "./Dashboard/Auth/LoginForm"
 
 function App() {
   return (

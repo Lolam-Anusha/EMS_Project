@@ -16,6 +16,7 @@ const Dashboard = () => {
     // Extract the current view from the URL path
     const getViewFromPath = () => {
         const path = location.pathname.split('/');
+        
         if (path.length > 2) {
             return path[2];
         }
@@ -182,7 +183,7 @@ const Dashboard = () => {
 
                             <li className="logout-item" onClick={handleLogout}>
                                 <LogOut size={20} />
-                                <span>Logout</span>
+                                <span>My profile</span>
                             </li>
                         </ul>
                     </nav>
